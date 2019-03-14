@@ -12,6 +12,11 @@ public class Item
 
     }
 
+    public Item(String name)
+    {
+        this.name = name;
+    }
+
     public Item(String name, String desc, String price, String imagePath)
     {
         this.name = name;

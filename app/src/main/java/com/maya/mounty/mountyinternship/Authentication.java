@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +29,9 @@ public class Authentication extends AppCompatActivity {
     private LinearLayout guest;
     private LinearLayout admin;
     private FirebaseAuth auth;
+    private EditText guestname;
+    private EditText guestEmail;
+    private EditText guestPhone;
     private FirebaseUser user;
     private EditText adminMail;
     private EditText adminPassword;
@@ -53,6 +55,10 @@ public class Authentication extends AppCompatActivity {
         adminLogin = findViewById(R.id.adminenter);
         adminToGuest = findViewById(R.id.changetoguest);
         admin = findViewById(R.id.adminlogin);
+
+        guestname = findViewById(R.id.guestname);
+        guestEmail = findViewById(R.id.guestemail);
+        guestPhone = findViewById(R.id.guestmobile);
 
         adminMail = findViewById(R.id.adminemail);
         adminPassword = findViewById(R.id.adminpassword);
@@ -80,7 +86,14 @@ public class Authentication extends AppCompatActivity {
         guestLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                authenticateGuest();
+                String na, em, nu;
+                na = guestname.getText().toString();
+                em = guestEmail.getText().toString();
+                nu = guestPhone.getText().toString();
+                if (!na.equals("") && !em.equals("") && !nu.equals(""))
+                    authenticateGuest(na, em, nu);
+                else
+                    Toast.makeText(Authentication.this, "Fill all the Details", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -89,12 +102,9 @@ public class Authentication extends AppCompatActivity {
             public void onClick(View view) {
                 String mail = adminMail.getText().toString();
                 String password = adminPassword.getText().toString();
-                if(mail.equals("")||password.equals(""))
-                {
+                if (mail.equals("") || password.equals("")) {
                     Toast.makeText(Authentication.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                } else {
                     dialog.show();
                     authenticateAdmin(mail, password);
                 }
@@ -102,28 +112,30 @@ public class Authentication extends AppCompatActivity {
         });
     }
 
-    public void authenticateGuest()
-    {
-        Toast.makeText(Authentication.this, "Guest Login", Toast.LENGTH_SHORT).show();
+    public void authenticateGuest(String name, String email, String phone) {
+        Toast.makeText(Authentication.this, "User Entry Successful", Toast.LENGTH_SHORT).show();
+        Bundle extras = new Bundle();
+        extras.putString("name", name);
+        extras.putString("email", email);
+        extras.putString("phone", phone);
+        Intent i = new Intent(Authentication.this, UserDashboard.class);
+        i.putExtras(extras);
+        startActivity(i);
     }
 
-    public void authenticateAdmin(String email, String password)
-    {
+    public void authenticateAdmin(String email, String password) {
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(Authentication.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
 
-                        if (task.isSuccessful())
-                        {
+                        if (task.isSuccessful()) {
                             Toast.makeText(Authentication.this, "Admin Login Successful", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                             Intent i = new Intent(Authentication.this, DashboardAdmin.class);
                             startActivity(i);
-                        }
-                        else
-                        {
+                        } else {
                             dialog.dismiss();
                             Toast.makeText(Authentication.this, "Invalid Details", Toast.LENGTH_SHORT).show();
                         }

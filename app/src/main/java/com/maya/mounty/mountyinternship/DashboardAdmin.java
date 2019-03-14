@@ -55,12 +55,9 @@ public class DashboardAdmin extends AppCompatActivity {
                         loadFragent(fragment);
                         return true;
 
-                    case R.id.deleteItems:
-
-                        return true;
 
                     case R.id.listIems:
-                        toolBar.setTitle("Profile");
+                        toolBar.setTitle("Products Availible");
                         fragment = new ItemsListAdmin();
                         loadFragent(fragment);
                         return true;

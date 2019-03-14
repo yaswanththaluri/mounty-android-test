@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6e6e6">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List of Items"
+        android:text="No Items Availible"
+        android:id="@+id/noitems"
         android:layout_centerInParent="true"
+        android:visibility="invisible"
         />
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemList"
+        android:transcriptMode="alwaysScroll"
+        android:divider="@null"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="60dp"/>
 
 </RelativeLayout>

@@ -26,6 +26,7 @@
         <activity
             android:name=".Authentication"
             android:theme="@style/AuthTheme" />
+        <activity android:name=".UserDashboard"></activity>
     </application>
 
 </manifest>

@@ -99,7 +99,7 @@
                     android:hint="Customer Name"
                     android:textColorHint="#ffffff"
                     android:drawablePadding="15dp"
-                    android:inputType="phone"
+                    android:inputType="text"
                     android:drawableLeft="@drawable/usericon"
                     />
 
