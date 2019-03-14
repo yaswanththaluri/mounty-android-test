@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/additem"
+        android:id="@+id/addItem"
+        android:title="Add Items"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:icon="@drawable/deleteitem"
+        android:id="@+id/deleteItems"
+        android:title="Delete Item"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:icon="@drawable/list"
+        android:id="@+id/listIems"
+        android:title="List"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MountyInternship</string>
+    <string name="addingWelcome">Welcome Admin. \nClick on the Add Floating Button To add an item Into Database</string>
+</resources>

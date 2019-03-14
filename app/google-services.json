@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "124817035409",
+    "firebase_url": "https://mounty-test.firebaseio.com",
+    "project_id": "mounty-test",
+    "storage_bucket": "mounty-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124817035409:android:61729927a1a80fce",
+        "android_client_info": {
+          "package_name": "com.maya.mounty.mountyinternship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124817035409-84hoqbvbdf64cah44p3vposjt6r5akmq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maya.mounty.mountyinternship",
+            "certificate_hash": "cfb55f5ca97a9cae0604871e38d2029e74c1d7fd"
+          }
+        },
+        {
+          "client_id": "124817035409-oqhdghhni10t88p9gfjatstbo30cqei7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjbZ-n1tLf31pRTsOccG5njjh8aWWsKls"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124817035409-oqhdghhni10t88p9gfjatstbo30cqei7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
